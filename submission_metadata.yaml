@@ -1,0 +1,63 @@
+team_name: "your-team-name-here"
+
+primary_contact:
+  name: "Priyadarshini"
+  email: "your-email@example.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Priyadarshini"
+    email: "your-email@example.com"
+    role: "Backend Engineer / ML Ranking System"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-hackathon"
+
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+
+reproduce_command: "python rank.py"
+
+compute:
+  platform: "Local"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude (Anthropic) extensively throughout: dataset exploration and
+  anomaly analysis, scoring architecture design, weight calibration, edge-case
+  testing, and code implementation. I directed the approach — what the JD
+  actually rewards/penalizes, which traps to guard against, what edge cases
+  to test for — and Claude implemented and iterated on that direction. I can
+  walk through and defend every scoring decision and the reasoning behind it.
+  No candidate data was sent to any external LLM API during ranking itself;
+  all scoring runs locally with no network access.
+
+methodology_summary: |
+  Rule-based weighted ranker with explicit reasoning capture. Five primary
+  components: (1) Title tier scoring with modifier normalization — handles
+  Principal/Staff/Lead variants without hardcoding; (2) Career concept-family
+  scoring — groups JD terms into 10 families (retrieval, ranking, embeddings,
+  vector DB, evaluation, etc.) so one candidate description can't inflate by
+  repeating synonyms; (3) Skill depth scoring by proficiency + duration;
+  (4) Behavioral availability signals — recruiter response rate, platform
+  recency, open-to-work, notice period; (5) Platform engagement — saves,
+  GitHub activity, assessment scores. Honeypot detection via hard title gate.
+  Stuffer detection: high skill keyword count but zero career evidence triggers
+  penalty. Profile anomaly detection flags impossible timelines. Career
+  progression bonus rewards upward title trajectory. Runtime ~60s for 100K
+  candidates on CPU.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
