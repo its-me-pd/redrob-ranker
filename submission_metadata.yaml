@@ -1,18 +1,18 @@
-team_name: "your-team-name-here"
+team_name: "Priyadarshini_Nagarajan"
 
 primary_contact:
-  name: "Priyadarshini"
-  email: "your-email@example.com"
-  phone: "+91-XXXXXXXXXX"
+  name: "Priyadarshini Nagarajan"
+  email: "priyadharshini2816@gmail.com"
+  phone: "+91-9080490485"
 
 team_members:
-  - name: "Priyadarshini"
-    email: "your-email@example.com"
+  - name: "Priyadarshini Nagarajan"
+    email: "priyadharshini2816@gmail.com"
     role: "Backend Engineer / ML Ranking System"
 
-github_repo: "https://github.com/YOUR_USERNAME/redrob-hackathon"
+github_repo: "https://github.com/its-me-pd/redrob-ranker"
 
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+sandbox_link: "https://colab.research.google.com/drive/1npAwtAbY1ru1WU2XfVEIhayfz7ZOZRfc?usp=sharing"
 
 reproduce_command: "python rank.py"
 
@@ -20,7 +20,7 @@ compute:
   platform: "Local"
   cpu_cores: 8
   ram_gb: 16
-  python_version: "3.11"
+  python_version: "3.14.6"
   os: "Windows 11"
   uses_gpu_for_inference: false
   has_network_during_ranking: false
